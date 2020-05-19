@@ -25,13 +25,13 @@ def compare(targets_encode: list, known_encodes: list):
             A.append(False)
     if True in A:
         B = []
-        for i in range(len(A)):
-            if A[i]:
-                B.append(targets_encode[i])
+        for elements in enumerate(A):
+            num, res = elements # num - index in list, res - bool; elements - Tuple
+            if res:
+                B.append(targets_encode[num])
         return True, B, A
     else:
         return False, None, None
-
 
 Root = Detection()
 
